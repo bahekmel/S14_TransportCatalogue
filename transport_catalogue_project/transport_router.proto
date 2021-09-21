@@ -15,7 +15,7 @@ message StopId {
 }
 
 message Router {
-	RouterSettings router_settings = 1;
-	Graph graph = 2;
-	repeated StopId stop_id = 3;
+    RouterSettings router_settings = 1;
+    Graph graph = 2;
+    repeated StopId stop_id = 3;
 }

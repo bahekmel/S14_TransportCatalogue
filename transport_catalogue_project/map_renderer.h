@@ -33,7 +33,7 @@ namespace renderer {
 
         svg::Document GetSvgDocument(const std::map<std::string_view, domain::Bus*>& buses) const;
 
-		json::Node GetRenderSettings() const;
+        json::Node GetRenderSettings() const;
 
     private:
         double width_ = 0;

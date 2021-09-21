@@ -197,49 +197,52 @@ namespace renderer {
         }
         return result;
     }
-	
-	json::Node ToNode(const svg::Point& p){
-		return json::Node(json::Array{{p.x}, {p.y}});
-	}
-	
-	json::Node ToNode(const svg::Color& c){
-		if(std::holds_alternative<std::string>(c)){
-			return json::Node(std::get<std::string>(c));
-		} else if(std::holds_alternative<svg::Rgb>(c)){
-			const svg::Rgb& rgb = std::get<svg::Rgb>(c);
-			return json::Node(json::Array{{rgb.red}, {rgb.green}, {rgb.blue}});
-		} else if(std::holds_alternative<svg::Rgba>(c)){
-			const svg::Rgba& rgba = std::get<svg::Rgba>(c);
-			return json::Node(json::Array{{rgba.red}, {rgba.green}, {rgba.blue}, {rgba.opacity}});
-		} else 
-			return json::Node("none"s);
-	}
-	
-	json::Node ToNode(const std::vector<svg::Color>& cv){
-		json::Array result;
-		result.reserve(cv.size());
-		for(const auto& c : cv){
-			result.emplace_back(ToNode(c));
-		}
-		return json::Node(std::move(result));
-	}
-	
-	json::Node MapRenderer::GetRenderSettings() const {
-		return json::Node(json::Dict{
-					{{"width"s},{width_}},
-					{{"height"s},{height_}},
-					{{"padding"s},{padding_}},
-					{{"stop_radius"s},{stop_radius_}},
-					{{"line_width"s},{line_width_}},
-					{{"bus_label_font_size"s},{bus_label_font_size_}},
-					{{"bus_label_offset"s},ToNode(bus_label_offset_)},
-					{{"stop_label_font_size"s},{stop_label_font_size_}},
-					{{"stop_label_offset"s},ToNode(stop_label_offset_)},
-					{{"underlayer_color"s},ToNode(underlayer_color_)},
-					{{"underlayer_width"s},{underlayer_width_}},
-					{{"color_palette"s},ToNode(color_palette_)},
-					});
-	}
+
+    json::Node ToNode(const svg::Point& p) {
+        return json::Node(json::Array{ {p.x}, {p.y} });
+    }
+
+    json::Node ToNode(const svg::Color& c) {
+        if (std::holds_alternative<std::string>(c)) {
+            return json::Node(std::get<std::string>(c));
+        }
+        else if (std::holds_alternative<svg::Rgb>(c)) {
+            const svg::Rgb& rgb = std::get<svg::Rgb>(c);
+            return json::Node(json::Array{ {rgb.red}, {rgb.green}, {rgb.blue} });
+        }
+        else if (std::holds_alternative<svg::Rgba>(c)) {
+            const svg::Rgba& rgba = std::get<svg::Rgba>(c);
+            return json::Node(json::Array{ {rgba.red}, {rgba.green}, {rgba.blue}, {rgba.opacity} });
+        }
+        else
+            return json::Node("none"s);
+    }
+
+    json::Node ToNode(const std::vector<svg::Color>& cv) {
+        json::Array result;
+        result.reserve(cv.size());
+        for (const auto& c : cv) {
+            result.emplace_back(ToNode(c));
+        }
+        return json::Node(std::move(result));
+    }
+
+    json::Node MapRenderer::GetRenderSettings() const {
+        return json::Node(json::Dict{
+                    {{"width"s},{width_}},
+                    {{"height"s},{height_}},
+                    {{"padding"s},{padding_}},
+                    {{"stop_radius"s},{stop_radius_}},
+                    {{"line_width"s},{line_width_}},
+                    {{"bus_label_font_size"s},{bus_label_font_size_}},
+                    {{"bus_label_offset"s},ToNode(bus_label_offset_)},
+                    {{"stop_label_font_size"s},{stop_label_font_size_}},
+                    {{"stop_label_offset"s},ToNode(stop_label_offset_)},
+                    {{"underlayer_color"s},ToNode(underlayer_color_)},
+                    {{"underlayer_width"s},{underlayer_width_}},
+                    {{"color_palette"s},ToNode(color_palette_)},
+            });
+    }
 
     bool IsZero(double value) {
         return std::abs(value) < EPSILON;

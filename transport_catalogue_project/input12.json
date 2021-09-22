@@ -4,20 +4,24 @@
       },
       "stat_requests": [
           {
-              "id": 1,
-              "name": "297",
-              "type": "Bus"
+              "id": 218563507,
+              "type": "Bus",
+              "name": "14"
           },
           {
-              "id": 2,
-              "name": "635",
-              "type": "Bus"
+              "id": 508658276,
+              "type": "Stop",
+              "name": "Elektroseti"
           },
           {
-              "id": 3,
-              "name": "Universam",
-              "type": "Stop"
+              "id": 1964680131,
+              "type": "Route",
+              "from": "Morskoy vokzal",
+              "to": "Parallel'naya ulitsa"
+          },
+          {
+              "id": 1359372752,
+              "type": "Map"
           }
       ]
   }
-   

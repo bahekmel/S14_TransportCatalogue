@@ -19,4 +19,4 @@ namespace domain {
         , is_circle(is_circle)
     {}
 
-} //namespace domain
+}

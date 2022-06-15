@@ -145,4 +145,4 @@ namespace transport {
         bus_velocity_ = settings_node.AsDict().at("bus_velocity"s).AsDouble();
     }
 
-} // transport
+}

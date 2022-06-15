@@ -253,4 +253,4 @@ namespace renderer {
                 (max_lat_ - coords.lat) * zoom_coeff_ + padding_ };
     }
 
-} // renderer
+}

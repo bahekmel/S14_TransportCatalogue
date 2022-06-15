@@ -58,13 +58,11 @@ namespace transport {
         else return 0;
     }
 
-    const std::map<std::string_view, Bus*>& Catalogue::GetSortedAllBuses() const
-    {
+    const std::map<std::string_view, Bus*>& Catalogue::GetSortedAllBuses() const {
         return buses_list_;
     }
 
-    const std::map<std::string_view, Stop*>& Catalogue::GetSortedAllStops() const
-    {
+    const std::map<std::string_view, Stop*>& Catalogue::GetSortedAllStops() const {
         return stops_list_;
     }
 

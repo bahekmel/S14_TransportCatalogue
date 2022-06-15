@@ -55,4 +55,4 @@ namespace transport {
         void SetSettings(const json::Node& settings_node);
     };
 
-} // namespace transport
+}

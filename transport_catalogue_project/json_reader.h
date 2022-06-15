@@ -28,7 +28,7 @@ public:
 
 private:
     json::Document input_;
-    json::Node dumm_{ nullptr };
+    json::Node dumm_{nullptr};
 
     struct Bus_info {
         std::vector<std::string_view> stops;

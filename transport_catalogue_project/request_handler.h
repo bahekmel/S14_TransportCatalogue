@@ -13,8 +13,8 @@
 
 class RequestHandler {
 public:
-    RequestHandler(const transport::Catalogue& catalogue,
-        const transport::Router& router, const renderer::MapRenderer& renderer);
+    RequestHandler(const transport::Catalogue& catalogue, const transport::Router& router,
+                   const renderer::MapRenderer& renderer);
 
     void JsonStatRequests(const json::Node& json_doc, std::ostream& output);
 

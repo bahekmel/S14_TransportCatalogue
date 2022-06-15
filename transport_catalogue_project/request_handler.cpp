@@ -8,8 +8,8 @@ using namespace std;
 using namespace transport;
 using namespace domain;
 
-RequestHandler::RequestHandler(const transport::Catalogue& catalogue,
-    const transport::Router& router, const renderer::MapRenderer& renderer)
+RequestHandler::RequestHandler(const transport::Catalogue& catalogue, const transport::Router& router,
+                               const renderer::MapRenderer& renderer)
     : db_(catalogue)
     , router_(router)
     , renderer_(renderer) {}
@@ -81,7 +81,8 @@ json::Node RequestHandler::FindBusRequestProcessing(const json::Dict& request_ma
         double straight_distance = 0.0;
         for (int i = 1; i < stops_count; ++i) {
             distance += bus->stops[i - 1]->GetDistance(bus->stops[i]);
-            straight_distance += geo::ComputeDistance(bus->stops[i - 1]->coordinates, bus->stops[i]->coordinates);
+            straight_distance += geo::ComputeDistance(bus->stops[i - 1]->coordinates,
+                                                      bus->stops[i]->coordinates);
         }
         double curvature = distance / straight_distance;
         unordered_set<string> unique_stops_set;

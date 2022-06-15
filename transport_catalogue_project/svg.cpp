@@ -7,14 +7,9 @@ namespace svg {
 
     void Object::Render(const RenderContext& context) const {
         context.RenderIndent();
-
-        // Делегируем вывод тега своим подклассам
         RenderObject(context);
-
         context.out << std::endl;
     }
-
-    // ---------- Circle ------------------
 
     Circle& Circle::SetCenter(Point center) {
         center_ = center;
@@ -33,8 +28,6 @@ namespace svg {
         RenderAttrs(context.out);
         out << " />"sv;
     }
-
-    // ---------- Polyline ------------------
 
     Polyline& Polyline::AddPoint(Point point) {
         points_.emplace_back(point);
@@ -57,8 +50,6 @@ namespace svg {
         RenderAttrs(context.out);
         out << "/>"s;
     }
-
-    // ---------- Text ------------------
 
     // Задаёт координаты опорной точки (атрибуты x и y)
     Text& Text::SetPosition(Point pos) {
@@ -187,4 +178,4 @@ namespace svg {
         return output;
     }
 
-}  // namespace svg
+}

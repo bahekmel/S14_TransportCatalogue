@@ -2,8 +2,8 @@
 
 using namespace std;
 
-void Serialize(const transport::Catalogue& tcat,
-    const renderer::MapRenderer& renderer, const transport::Router& router,
+void Serialize(const transport::Catalogue& tcat, const renderer::MapRenderer& renderer,
+               const transport::Router& router,
     std::ostream& output) {
     serialize::TransportCatalogue database;
     for (const auto& [name, s] : tcat.GetSortedAllStops()) {

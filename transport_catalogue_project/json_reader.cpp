@@ -31,9 +31,9 @@ const json::Node& JsonReader::GetRoutingSettings() const
 }
 
 const json::Node& JsonReader::GetSerializationSettings() const {
-    if (input_.GetRoot().AsDict().count("serialization_settings"s))
+    if (input_.GetRoot().AsDict().count("serialization_settings"s)) {
         return input_.GetRoot().AsDict().at("serialization_settings"s);
-    else return dumm_;
+    } else return dumm_;
 }
 
 void JsonReader::FillCatalogue(transport::Catalogue& catalogue) const
@@ -96,8 +96,7 @@ void JsonReader::ParseBusAddRequest(const json::Dict& request_map, BusesInfoMap&
                 for (int j = stops.size() - 2; j >= 0; --j) {
                     stops.push_back(stops[j]);
                 }
-            }
-            else {
+            } else {
                 buses_info[bus_name].final_stop = bus_stops[0].AsString();
             }
         }

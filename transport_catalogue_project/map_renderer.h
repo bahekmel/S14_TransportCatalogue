@@ -107,4 +107,4 @@ namespace renderer {
         double zoom_coeff_ = 0;
     };
 
-} // namespace renderer
+}

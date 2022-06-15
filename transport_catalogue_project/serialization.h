@@ -26,4 +26,5 @@ serialize::RouterSettings GetRouterSettingSerialize(const json::Node& router_set
 serialize::Router Serialize(const transport::Router& router);
 
 std::tuple<transport::Catalogue, renderer::MapRenderer, transport::Router,
-    graph::DirectedWeightedGraph<double>, std::map<std::string, graph::VertexId>> Deserialize(std::istream& input);
+    graph::DirectedWeightedGraph<double>, std::map<std::string,
+    graph::VertexId>> Deserialize(std::istream& input);

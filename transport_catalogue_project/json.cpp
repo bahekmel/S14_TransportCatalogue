@@ -361,4 +361,4 @@ namespace json {
         PrintNode(doc.GetRoot(), PrintContext{ output });
     }
 
-}  // namespace json
+}

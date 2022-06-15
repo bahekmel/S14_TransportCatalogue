@@ -15,4 +15,4 @@ double ComputeDistance(Coordinates from, Coordinates to) {
         * EARTH_RADIUS;
 }
 
-}  // namespace geo
+}

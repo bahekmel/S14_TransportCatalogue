@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-
 package serialize;
 
 import "map_renderer.proto";

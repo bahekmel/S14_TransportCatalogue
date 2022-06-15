@@ -1,6 +1,5 @@
 # TransportCatalogue
-Transport Catalogue project
+Transport Catalogue
 
-Add base like input11.json and input12.json then build .svg map and routes to standart output.
-
-Проект использует для построения CMake и Protobuf. При запуске необходимо указать входной файл вида input11.json и input12.json с данными базы транспортного справочника и запросов соответственно. Вывод ответа на запросы осуществляется в стандартный поток вывода. Распознаются запросы типов Bus, Stop, Route и Map, которые выводят остановки автобуса, автобусы на остановке, маршрут от остановки A до B с пересадками и общим временем на поездку и общую карту маршрутов соответственно. Вывод в виде файла JSON.
+The city router. Allows to build routes in the city. Similar to the router in Yandex.Maps. 
+Works with JSON requests. Returns a response in SVG format to draw routes.
